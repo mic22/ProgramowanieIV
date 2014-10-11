@@ -17,10 +17,10 @@
         </Setter>
     </Style>
 
-    <Style x:Key="JUXT" TargetType="TextBlock" BasedOn="{StaticResource Logo}">
+    <Style x:Key="Side" TargetType="TextBlock" BasedOn="{StaticResource Logo}">
         <Setter Property="HorizontalAlignment" Value="Left" />
         <Setter Property="VerticalAlignment" Value="Bottom" />
-        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontSize" Value="10" />
         <Setter Property="Margin" Value="0,-20" />
         <Setter Property="RenderTransform">
             <Setter.Value>
@@ -29,11 +29,11 @@
         </Setter>
     </Style>
 
-    <Style x:Key="Up" TargetType="Grid">
+    <Style x:Key="Top" TargetType="Grid">
         <Setter Property="Background">
             <Setter.Value>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF443D3D" Offset="0"/>
+                    <GradientStop Color="#FF82B9FB" Offset="0"/>
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
@@ -87,32 +87,6 @@
         </Setter>
     </Style>
 
-    <Style x:Key="ButtonLeft" TargetType="Button">
-        <Setter Property="Margin" Value="5"/>
-        <Setter Property="Template">
-            <Setter.Value>
-                <ControlTemplate TargetType="{x:Type Button}">
-                    <Border CornerRadius="5" Style="{StaticResource ButonBackground}"/>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background">
-                                <Setter.Value>
-                                    <LinearGradientBrush EndPoint="1,0" StartPoint="1,1.25">
-                                        <GradientStop Color="Black" Offset="0"/>
-                                        <GradientStop Color="Black" Offset="0.2"/>
-
-                                    </LinearGradientBrush>
-                                </Setter.Value>
-                            </Setter>
-
-                        </Trigger>
-                    </ControlTemplate.Triggers>
-                </ControlTemplate>
-            </Setter.Value>
-        </Setter>
-
-    </Style>
-
     <Style x:Key="Button1" TargetType="Button">
         <Setter Property="Background">
             <Setter.Value>
@@ -124,7 +98,7 @@
                 </LinearGradientBrush>
             </Setter.Value>
         </Setter>
-        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontSize" Value="18" />
         <Setter Property="FontWeight" Value="SemiBold" />
         <Setter Property="Foreground">
             <Setter.Value>
