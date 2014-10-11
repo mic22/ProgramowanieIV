@@ -19,6 +19,7 @@ namespace ImageBrowserApp
         private string[] files;
         //List<System.IO.FileInfo> images;
         ImportProgress import_progress;
+        DateTime selected_gallery;
 
         public Form1()
         {
@@ -203,17 +204,18 @@ namespace ImageBrowserApp
         {
             if (e.Node.Level > 0)
             {
-                reloadSelectedGallery(((DateTime)e.Node.Tag).Date);
+                selected_gallery = ((DateTime)e.Node.Tag).Date;
+                reloadSelectedGallery();// (selected_gallery);
             }
         }
 
-        private void reloadSelectedGallery(DateTime e)
+        private void reloadSelectedGallery()//(DateTime e)
         {
-            MessageBox.Show(e.ToString());
+            //MessageBox.Show(e.ToString());
 
             DataClasses1DataContext data = new DataClasses1DataContext();
             IEnumerable<Image> images = from i in data.Images
-                                        where i.date_time.Value.Date == e.Date
+                                        where i.date_time.Value.Date == selected_gallery
                                         select i;
 
             galleryPanel.Controls.Clear();
@@ -250,7 +252,7 @@ namespace ImageBrowserApp
                         cmd.Parameters.AddWithValue("@id", ((MenuItem)sender).Tag.ToString());
                         cmd.ExecuteNonQuery();
                         loadGalleriesList();
-                        //reloadSelectedGallery(((DateTime)(((MenuItem)sender).Tag)).Date);
+                        reloadSelectedGallery();
                     }
                 }
             }
